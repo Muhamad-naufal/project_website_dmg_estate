@@ -1,8 +1,13 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const About = () => {
   return (
-    <div
+    <motion.div
+      initial={{ opacity: 0, x: 200 }}
+      transition={{ duration: 1 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
       className="flex flex-col items-center justify-center container mx-auto p-14 md:px-20 lg:px-32 w-full overflow-hidden"
       id="about"
     >
@@ -16,7 +21,11 @@ const About = () => {
         Buat kamu yang ingin mencari rumah impian, DMG Estate adalah solusi.
       </p>
       <div className="flex flex-col md:flex-row items-center md:items-start md:gap-20">
-        <img src="/logo.png" alt="logo" className="w-full sm:w-1/2 max-wlg" />
+        <img
+          src="/brand_img.png"
+          alt="logo"
+          className="w-full sm:w-1/2 max-wlg"
+        />
         <div className="flex flex-col items-center md:items-start mt-10 text-gray-600 ">
           <div className="grid grid-cols-2 gap-6 md:gap-10 w-full 2xl:pr-28">
             <div>
@@ -48,7 +57,7 @@ const About = () => {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
